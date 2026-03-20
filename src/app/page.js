@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -38,23 +39,38 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-          <div>
-            <Image src="/hoodie.png" width={400} height={400} alt="Hoodie"/>
-            <h4 className="mt-4">NBL Essential Hoodie</h4>
-            <p className="text-gray-400">R$ 249,90</p>
-          </div>
+          <Link href="/product/hoodie">
+  <div className="cursor-pointer">
 
-          <div>
-            <Image src="/tshirt.png" width={400} height={400} alt="T-shirt"/>
-            <h4 className="mt-4">NBL Basic Tee</h4>
-            <p className="text-gray-400">R$ 129,90</p>
-          </div>
+    <Image src="/hoodie.png" width={400} height={400} alt="Hoodie"/>
 
-          <div>
-            <Image src="/pants.png" width={400} height={400} alt="Pants"/>
-            <h4 className="mt-4">NBL Street Pants</h4>
-            <p className="text-gray-400">R$ 199,90</p>
-          </div>
+    <h4 className="mt-4">NBL Essential Hoodie</h4>
+    <p className="text-gray-400">R$ 249,90</p>
+
+  </div>
+</Link>
+
+          <Link href="/product/tshirt">
+  <div className="cursor-pointer">
+
+    <Image src="/tshirt.png" width={400} height={400} alt="Tshirt"/>
+
+    <h4 className="mt-4">NBL Essential Tshirt</h4>
+    <p className="text-gray-400">R$ 149,90</p>
+
+  </div>
+</Link>
+
+          <Link href="/product/pants">
+  <div className="cursor-pointer">
+
+    <Image src="/pants.png" width={400} height={400} alt="Pants"/>
+
+    <h4 className="mt-4">NBL Essential Pants</h4>
+    <p className="text-gray-400">R$ 349,90</p>
+
+  </div>
+</Link>
 
         </div>
       </section>
