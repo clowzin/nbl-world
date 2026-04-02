@@ -18,8 +18,13 @@ export default function ProductCard({ product }) {
         </div>
 
         <div className="mt-4">
-          <h2 className="text-lg font-semibold">{product.name}</h2>
-          <p className="text-gray-400 mt-1">{product.price}</p>
+          <h2 className="text-lg font-semibold text-red-500">
+            {product.name}
+          </h2>
+
+          <p className="text-gray-400 mt-1">
+            {product.price}
+          </p>
         </div>
 
         <button className="mt-4 w-full bg-white text-black py-2 rounded-lg font-semibold opacity-0 group-hover:opacity-100 transition duration-300">

@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+import { products } from "@/data/products";
+import ProductCard from "@/components/ProductCard";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
 
         <nav className="space-x-8 text-sm">
           <a href="#">Home</a>
-          <a href="#">Shop</a>
+          <Link href="/shop">Shop</Link>
           <a href="#">About</a>
         </nav>
       </header>
@@ -21,16 +22,18 @@ export default function Home() {
       {/* HERO */}
       <section className="text-center py-32">
         <h2 className="text-6xl font-bold mb-6">
-          GLOBAL STREETWEAR
+          IDENTIDADE EM PERFORMANCE
         </h2>
 
         <p className="text-gray-400 mb-8">
           Peças essenciais para o seu estilo.
         </p>
 
-        <button className="bg-white text-black px-8 py-3 font-semibold">
-          EXPLORE COLLECTION
-        </button>
+        <Link href="/shop">
+          <button className="bg-white text-black px-8 py-3 font-semibold">
+            Explorar
+          </button>
+        </Link>
       </section>
 
       {/* PRODUTOS */}
@@ -38,41 +41,11 @@ export default function Home() {
         <h3 className="text-xl font-semibold mb-8">COLLECTION</h3>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-          <Link href="/product/hoodie">
-  <div className="cursor-pointer">
-
-    <Image src="/hoodie.png" width={400} height={400} alt="Hoodie"/>
-
-    <h4 className="mt-4">NBL Essential Hoodie</h4>
-    <p className="text-gray-400">R$ 249,90</p>
-
-  </div>
-</Link>
-
-          <Link href="/product/tshirt">
-  <div className="cursor-pointer">
-
-    <Image src="/tshirt.png" width={400} height={400} alt="Tshirt"/>
-
-    <h4 className="mt-4">NBL Essential Tshirt</h4>
-    <p className="text-gray-400">R$ 149,90</p>
-
-  </div>
-</Link>
-
-          <Link href="/product/pants">
-  <div className="cursor-pointer">
-
-    <Image src="/pants.png" width={400} height={400} alt="Pants"/>
-
-    <h4 className="mt-4">NBL Essential Pants</h4>
-    <p className="text-gray-400">R$ 349,90</p>
-
-  </div>
-</Link>
-
+          {products.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
+
       </section>
 
     </main>
